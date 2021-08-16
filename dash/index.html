@@ -105,7 +105,7 @@ ol, ul {
 				<div class="container" style="width: 100%; padding-bottom: 7px;" >
 					<div class="columns twelve" style="display:flex">
 				
-						<a href="#home" class="navbar-brand nullActive" id="homeBtn"><h1 style="margin: 0px; font-weight: 800; font-family: radwave; letter-spacing: 4px;">IXNAY</h1></a>
+						<a href="./index.html" class="navbar-brand nullActive" id="homeBtn"><h1 style="margin: 0px; font-weight: 800; font-family: arialBlack; letter-spacing: 4px;">IXNAY</h1></a>
 
 
 						<ul class=" " style="display:flex; margin-top: 1em; margin-left: -15px;">
@@ -155,7 +155,7 @@ ol, ul {
 											<p><span style="float:right;"><a href="javascript:;" id="walletLogout">Logout</a></span></p>
 										</div>
 										<div class="" align="center" style="   padding: 1em;margin-top: 1em;border-radius: 10px; overflow: hidden">
-											<div id="walletQrCode"></div> <br>
+											<div style="display: none" id="walletQrCode"></div> <br>
 										
 												<span id="walletLoader" class="hidden"></span>
 												<div id="walletAddress" style="font-size: 1.4em;     width: 100%;
@@ -242,8 +242,10 @@ ol, ul {
 
 								<div class="container">
 									<div class="columns twelve" style="padding: 1em; border-radius: 10px">
-										<h1>Failed Orders By Product</h1>
-										<div class="" style="font-size: 1em" id="failedOrdersList"></div>
+										<h1>Recent</h1>
+										<div class="tableHolder"><table class="" style="font-size: 1em" id=""><tr><td>Product Name</td><td>Product Type</td></tr></table></div><br>
+
+										<div class="tableHolder"><table class="" style="font-size: 1em" id="failedOrdersList"></table></div>
 									</div>
 								</div>
 
@@ -270,6 +272,26 @@ ol, ul {
 									
 										</div>
 									</div>
+								</div>
+
+
+								<div class="container">
+									<div class="columns four" style=" padding: 1em; margin-top: 1em;border-radius: 10px; border: 2px solid gray ">
+										<div  class="" style=" ">
+											
+											<input style="color: black;" placeholder="Product Name" class="productInput" type="text" id="newProductName"><br>
+											<input style="color: black;" placeholder="Product Price" class="productInput" type="text" id="newProductPrice"><br>
+											<input style="color: black;" placeholder="Product Type"  class="productInput" type="text" id="newProductType"><br><br>
+											<button style="color: black;"   class="productInput" type="text" id="sendNewProduct">Add New Product</button><br>
+
+
+										</div>
+
+									</div>
+									<div class="columns eight" style=" padding: 1em; margin-top: 1em;border-radius: 10px; height: fit-content; border: 2px solid gray " id="fillProducts">
+									</div>
+
+									
 								</div>
 									
 							</div>

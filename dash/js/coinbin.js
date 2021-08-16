@@ -69,14 +69,75 @@ $(document).ready(function() {
 
 					array1 = [ ]
 					arrayFailedList= [ ]
+					getAllProduct = [ ]
+
+
+					$("#deleteProduct").click(function(){
+						console.log("ye")
+						getIdValue = $("#userProductID").val()
+				
+						gun.get("user").get(vendorWallet).get("products").put(null)
+					})
+
+					$("#sendNewProduct").click(function(){
+						var randIntGo = '0' + "." + (Math.floor(Math.random() * (999 - 111 + 1) + 111)) + "." + (Math.floor(Math.random() * (999 - 111 + 1) + 111))
+
+						var newName = $("#newProductName").val()
+						var newPrice = $("#newProductPrice").val()
+						var newType = $("#newProductType").val()
+
+						gun.get("user").get(vendorWallet).get("products").set({
+							userProductName: newName,
+							userProductPrice: newPrice,
+							userProductType: newType,
+							userProductID: randIntGo,
+
+						})
+					})
+
+
+					gun.get("user").get(vendorWallet).get("products").map().on(v => {
+						getAllProduct.push(
+						`<div class=" productEntry">` +
+						 	`<div>` + 
+								`<div class="">` + 
+									`<h1 class="firstProductEntry">` +
+
+									 v.userProductName +
+									`</h1>` +
+								`</div>` 
+							+ `</div>`+ 
+						
+								 `<div>`  + 
+									`<div class="productDataEntry">` 
+										+ v.userProductPrice + 
+									`</div>` +
+								`</div>` + 
+								`<div>` + 
+									`<div class="productDataEntry">` 
+										+ v.userProductType + 
+									`</div>` + 
+								`</div>` +   
+								`<div>` + `
+									<div class="productDataEntry">` 
+										+ v.userProductID + 
+									`</div>` + 
+								`</div>`+ 
+						
+						`<div/>`)
+						
+						$("#fillProducts").html(getAllProduct)
+					})
+
+					
 			
 					gun.get("user").get(vendorWallet).get("failedOrders").map().on(v => {
-						console.log(v.getProductName + " | " +  v.getProductType)
+						console.log(v.getProductName + " | " +  v.getProductType +  " | " +  v.getProductTime)
 
 						array1.push(v.amounts )
 						console.log(array1)
 
-						arrayFailedList.push(v.getProductName + " | " +  v.getProductType + `<br/>`)
+						arrayFailedList.push(`<tr class="hover">` + `<td>` + `<div class="tableProduct">` + v.getProductName + `</div>` + `</td>`+ `<td>`  + `<div class="tableType">` + v.getProductType + `</div>` + `</td>` + `<td>` + `<div class="tableTime">` + v.getProductTime + `</div>` + `</td>` + `<tr/>`)
 						console.log(arrayFailedList)
 						$("#failedOrdersList").html(arrayFailedList)
 

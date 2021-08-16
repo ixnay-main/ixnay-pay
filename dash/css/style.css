@@ -3,10 +3,9 @@ html, body {
 }
 
 @font-face{
-	font-family: radwave;
-	src: url(Radwave.otf) ;
+	font-family: arialBlack;
+	src: url(../../checkout/css/arial-black.ttf) ;
   }
-
 body {
 	background-color:#000000;
 	color: white !important;
@@ -28,13 +27,28 @@ body {
 	height: 60px;
 	background-color: #000000;
 	padding-top: 20px;
+
 }
 
 
 
 .borderLess{
-	border: none;
 	background-color: #ffffff00;
+	border-radius: 5px !important;
+	height: 1.6em;
+	width: 10em;
+	margin-top: 5px;
+}
+
+.productInput {
+	border: none;
+
+    color: rgb(0, 0, 0) !important;
+    height: 2em;
+    margin-top: 4px;
+    width: 100%;
+    border-radius: 5px;
+    padding: 5px 20px;
 }
 
 li {
@@ -186,4 +200,114 @@ ul.nav.nav-pills {
 .grow:hover{
     filter: invert(1);
 
+}
+
+.nav-pills>li {
+    float: left;
+    width: 24%;
+}
+
+table {
+    background-color: transparent;
+    width: 100%;
+
+}
+
+.tableHolder{
+    border: 2px solid gray;
+    border-radius: 10px !important;
+	padding: 1em
+}
+
+tr {
+   
+}
+
+
+
+.hover{
+	transition: all 1s
+}
+
+.hover:hover{
+	transform: scale(1.01);
+}
+
+.tableType{
+	background-color: rgb(255, 255, 255);
+	padding:4px 20px;
+	color: rgb(0, 0, 0);
+    border-radius: 5px;
+    border: none;
+	width: fit-content;
+	margin: auto;
+    font-size: 1.2em;
+	margin-bottom: 5px;
+}
+
+.tableProduct{
+	background-color: rgb(247, 23, 23);
+	margin-bottom: 5px;
+
+	padding:4px 20px;
+	color: rgb(0, 0, 0);
+    border-radius: 5px;
+    border: none;
+	width: fit-content;
+    font-size: 1.2em;
+}
+
+.tableTime{
+	background-color: rgb(247, 232, 23);
+	margin-bottom: 5px;
+    float: right;
+	padding:4px 20px;
+	color: rgb(0, 0, 0);
+    border-radius: 5px;
+    border: none;
+	width: fit-content;
+    font-size: 1.2em;
+}
+
+.productEntry{
+	border-bottom: 5px solid white;
+}
+
+.firstProductEntry{
+	background-color: rgb(0, 0, 0);
+	color: white;
+	font-weight: 800;
+	margin-bottom: 5px;
+
+	padding:4px 20px;
+    border-radius: 5px;
+    border: none;
+	width: fit-content;
+    font-size: 2em;
+}
+
+.productDataEntry{
+	margin-bottom: 5px;
+    float: right;
+	padding:4px 20px;
+	background-color: whitesmoke;
+	color: rgb(0, 0, 0);
+    border-radius: 0px;
+	padding: 5px 20px;
+    border-radius: 5px;
+    border: none;
+	width: fit-content;
+    font-size: 1.2em;
+	width: fit-content;
+	margin-top: -1.7em
+}
+
+.productEntry td{
+	margin-right: 1em;
+}
+
+.productDataEntryRow{
+	background-color: rgb(247, 232, 23);
+	border-radius: 5px;
+	float: right;
 }

@@ -286,13 +286,17 @@ $(document).ready(function() {
 			} else {
 				$("#walletSendStatus").removeClass("hidden").html("You are trying to spend "+total+' but have a balance of '+balance);
 
-				
+				let current = new Date();
+				let cDate = current.getFullYear() + '-' + (current.getMonth() + 1) + '-' + current.getDate();
+				let cTime = current.getHours() + ":" + current.getMinutes() + ":" + current.getSeconds();
+				let dateTime = cDate + ' ' + cTime;
+				console.log(dateTime);
 
 				gun.get("user").get(vendorWallet).get("failedOrders").set({
 					amounts: 1,
 					getProductName: productName,
 					getProductType: productType,
-					
+					getProductTime: dateTime,					
 				})
 
 				var getFailedOrders = gun.get("user").get(vendorWallet).get("failedOrders").map().on(v => {
