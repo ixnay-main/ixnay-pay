@@ -14,6 +14,10 @@
 		<link rel="stylesheet" href="css/bootstrap.min.css" media="screen">
 		<link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
 		<link rel="stylesheet" href="css/style.css" media="screen">
+
+		<link type="text/css" rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css" />
+
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
 		
 		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
 		<script type="text/javascript" src="js/moment.min.js"></script>
@@ -45,9 +49,9 @@
 			var gun = Gun('https://mvp-gun.herokuapp.com/gun');
 			var user = gun.user();
 
-			var vendorWallet = "1Bw4zR3c1etKuTmBSe9AwBSvy7rEP7iYuJ"
-			var productAmount = 1
-			var productName = "Test product01"
+			var vendorWallet = "1NTk9w3evNoTTg4RJHiSGaAhrV3BUYhu3f"
+			var productAmount = 0.00001
+			var productName = "Online Magazine"
 			var productType = "Subscription"
 
 		</script>
@@ -65,24 +69,28 @@
 				<div class="tab-content">
 					<div class="tab-pane tab-content active" id="home">
 						
-						<a href="#wallet">wallet</a>
-						<p>excuse bloat. Made using <a href="coinb.in">Coinb.in</a> and <a href="era.eco">Gun</a></p>
-					</div>
 
-					<div class="tab-pane tab-content" id="wallet">
+
 						<div class="container">
 							<div class="columns twelve">
-								<div style=" margin: auto; ">
-									<form id="sign" style="background-color: grey; margin-top: 4em  !important; border-radius: 5px; width: fit-content; margin: auto; padding: 1em">
-										
+								<div style=" margin: auto; margin-top: 4em  !important;width: fit-content;" class="" >
+									<form id="sign" style=" border-radius: 5px; width: fit-content; margin: auto; padding: 1em; box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
+										<h1 style="font-size:1.7em; margin: 0px; font-family: arialBlack;">IXNAY</h1><br>
+
 										<div class="" style="display:flex; ">
-											<div class="button-container" style="margin: auto; ">
-												<div class='button -regular center' style="width: fit-content;"><input style="width: 48%; background-color: grey; border: none; color: white;" class="borderLess" id="alias" placeholder="alias"><input style="margin-left: 4%; width:48%; background-color: grey; border: none; color: white;" class="borderLess" id="pass" type="password" placeholder="password"></div>
+											<div class="button-container" style="margin: auto; display: block">
+												<div class='button -regular center' style="width: fit-content; display: grid">
+													<input style="border: none; color: rgb(0, 0, 0);" class="borderLess" id="alias" placeholder="alias">
+													<input style="border: none; color: rgb(0, 0, 0);" class="borderLess" id="pass" type="password" placeholder="password">
+												</div>
 											</div>
 										</div>
 										<div class="" style="display:flex">
 											<div class="button-container" style="margin: auto;">
-												<div class='button -regular center cena' style="width: fit-content;"><input class="borderless" id="in" type="submit" value="sign in" style="background-color: grey; border: none; color: white;"><input style="margin-left: 2em;   background-color: grey; border: none; color: white;" class="borderless" id="up" type="button" value="sign up"></div>
+												<div class='button -regular center cena' style="width: fit-content;">
+													<button class="" id="in" style="      border: none;  background-color: #ffffff00;"><i class="fas fa-chevron-right"></i></button>
+													
+													<input style="margin-left: 2em;     background-color: #ffffff00; border: none;" class="borderless" id="up" type="button" value="sign up"></div>
 											</div>
 										</div>
 
@@ -92,97 +100,107 @@
 						</div>		
 						<div id="openWallet" class="hidden" >
 							<div class="" id="rest">
-								<div class="container">
-									<div class="columns twelve" style="background-color: grey; padding: 1em; border-radius: 10px">
-										<div class="">
-											<p><span style="float:right;"><a href="javascript:;" id="walletLogout">Logout</a></span></p>
-										</div>
-										<div class="" align="center" style="   padding: 1em;margin-top: 1em;border-radius: 10px; overflow: hidden">
+								<div class="container" style="    width: fit-content;">
+									<div class="columns twelve " style="border-radius: 10px;      width: 19em; box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
+										<h1 style="font-size:1.7em;     padding: 1em; font-family: arialBlack; ">IXNAY</h1>
+
+										<div class=""  style=" margin-top: 0em;border-radius: 10px; overflow: hidden; padding: 1em">
 										
-												<span id="walletLoader" class="hidden"><img src="images/loader.gif"></span>
-												<div id="walletAddress" style="font-size: 1.4em;     width: 100%;
-												overflow-x: scroll;"></div>
-												<br><br>
-												<div style="text-align:center;">
-													<ul class="nav nav-pills" role="tablist">
-														<li role="presentation" class="active"><a href="javascript:;" id="walletBalance">0.00 BTC</a></li>
-														<li role="presentation"><a href="javascript:;" id="walletShowSpend">Spend</a></li>
-														<li role="presentation"><a id="walletHistory" href="javascript:;" target="_blank">History</a></li>
-														<li role="presentation"><a href="javascript:;" id="walletShowKeys">Keys</a></li>
-													</ul>
+											<span  id="walletLoader" class="hidden"></span>
+											<span  class="wasHidden">Your Address</span>
+											<div  id="walletAddress" class="wasHidden" style="    font-size: 14px; width: 100%;overflow-x: scroll;"></div>
 
-
+						
 											
 
-												<div>
-											
+										
+
+											<div id="walletKeys" class="hidden">
+												<label>Public Key</label>
+												<input class="form-control pubkey" type="text" readonly>
+												<label>Private key</label>
+												<div class="input-group">
+													<input class="form-control privkey" type="password" readonly>
+
+													<span class="input-group-btn">
+														<button class="showKey btn btn-default" type="button">Show</button>
+													</span>
+												</div>
+												<label>Private Key (AES256 encrypted key)</label>
+												<input class="form-control privkeyaes" type="text" readonly>
 											</div>
 
-												<div id="walletKeys" class="hidden">
-													<label>Public Key</label>
-													<input class="form-control pubkey" type="text" readonly>
-													<label>Private key</label>
-													<div class="input-group">
-														<input class="form-control privkey" type="password" readonly>
-
-														<span class="input-group-btn">
-															<button class="showKey btn btn-default" type="button">Show</button>
-														</span>
-													</div>
-													<label>Private Key (AES256 encrypted key)</label>
-													<input class="form-control privkeyaes" type="text" readonly>
+											<div id="walletSpend" class="">
+												<div class="row slim">
+								
 												</div>
 
-												<div id="walletSpend" class="hidden">
-													<div class="row slim">
-														<div class="form-inline output">
-															<div class="col-xs-8">
-																<label>Address</label>
-															</div>
-
-															<div class="col-xs-3">
-																<label>Amount</label>
-															</div>
+												<div class="row slim" id="walletSpendTo">
+													<div class="form-horizontal output cointainer">
+														<div class="columns twelve wasHidden" >
+															<span style="padding-left: 1em">Sellers Address</span> <input type="text" id="fillAddress" class="form-control addressTo" title="" readonly>
 														</div>
+					
+
+														<h2 style="padding-left: 0.4em;" id="fillName"></h2>
+														<h3 class="productTypeSub" style="padding-left: 0.4em;" id="fillType"></h3>
+														<hr>
+
+														<div class="columns twelve" ">
+															<input style="font-size: 2em; width: fit-content;font-weight: 800" type="text" id="fillAmount" class="form-control amount" data-original-title="" title="" placeholder="0.00" readonly>
+															<p style=" padding-left: 1em;   font-size: 1.5em;
+															font-weight: 700;">Bitcoin</p>
+
+														</div>
+
+														<a style="display: none" href="javascript:;" class="addressAdd"><span class="glyphicon glyphicon-plus"></span></a>
+					
 													</div>
-
-													<div class="row slim" id="walletSpendTo">
-														<div class="form-horizontal output">
-															<div class="col-xs-8">
-																<input type="text" id="fillAddress" class="form-control addressTo" title="" readonly>
-															</div>
-															<div class="col-xs-3">
-																<input type="text" id="fillAmount" class="form-control amount" data-original-title="" title="" placeholder="0.00" readonly>
-
-															</div>
-
-															<a style="display: none" href="javascript:;" class="addressAdd"><span class="glyphicon glyphicon-plus"></span></a>
-															<br><br>
-														</div>
-													</div>
-													<div class="row">
-														<div class="col-xs-6" style="display: none">
-															<label><abbr title="the amount to pay in network miner fees - 0.0001 or more recommended">Transaction Fee</abbr></label>
-															<input type="text" class="form-control" value="0.00001" id="txFee">
-														</div>
-														<div class="col-xs-5">
-															<input style="display: none;" type="text" class="form-control" value="0.000" id="developerDonation">
-														</div>
-													
-													</div>
-													<br>
-
-													<div id="walletSendStatus" class="alert alert-danger hidden"></div>
-
-													<button class="btn" type="button" id="walletSendBtn">Send</button>
-													<button class="btn btn-default" type="button">Reset</button>
 												</div>
+												<div class="container">
+													<div class="columns twelve wasHidden"  style="">
+														<label><abbr title="the amount to pay in network miner fees - 0.0001 or more recommended">Transaction Fee</abbr></label>
+														<input style="    width: fit-content;
+														border: none;" type="text" class="form-control" value="0.00001" id="txFee">
+													</div>
+													<div class="col-xs-5">
+														<input style="display: none;" type="text" class="form-control" value="0.000" id="developerDonation">
+													</div>
+												
+												</div>
+												<br>
 											</div>
+										</div>
+
+										<div id="walletSendStatus" class="alert alert-danger hidden"></div>
+
+										<button class="btn" type="btn" id="walletSendBtn" style="width: 100%;
+										background-color: #a6eca6;     border-radius: 5px 5px 0px 0px;">Pay</button>
+										<button style="width: 100%;     border: none;
+										background-color: white;"><a href="javascript:;" id="walletLogout" ><i style="color: black; font-size: 1.3em;" class="fas fa-sign-out-alt"></i></a></button>
+										<button style="width: 100%; 
+										background-color: #000000; border-radius: 0px 0px 5px 5px;color: white;     border: none;"><a href="javascript:;" id="showMore" style=""><i style="color: white; font-size: 1.3em;" class="fas fa-info"></i></a></button>
+
+										<button class="btn btn-default" type="button" style="display: none">Reset</button>
+					
+
+										<div style="text-align:center;" class="wasHidden">
+											<ul class="nav nav-pills" role="tablist">
+												<li role="presentation"><a href="javascript:;" id="walletBalance">0.00 BTC</a></li>
+												<li role="presentation"><a href="javascript:;" id="walletShowSpend">Spend</a></li>
+												<li role="presentation"><a id="walletHistory" href="javascript:;" target="_blank">History</a></li>
+												<li role="presentation"><a href="javascript:;" id="walletShowKeys">Keys</a></li>
+											</ul>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
+					</div>
+
+					<div class="tab-pane tab-content" id="wallet">
+						<a href="#wallet">wallet</a>
+						<p>excuse bloat. Made using <a href="coinb.in">Coinb.in</a> and <a href="era.eco">Gun</a></p>
 					</div>
 
 	

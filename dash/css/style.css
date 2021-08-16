@@ -214,8 +214,7 @@ table {
 }
 
 .tableHolder{
-    border: 2px solid gray;
-    border-radius: 10px !important;
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;    border-radius: 10px !important;
 	padding: 1em
 }
 
@@ -319,3 +318,10 @@ tr {
 .noHov:hover{
 	color: rgb(0, 0, 0);
 }
+
+
+
+textarea:focus, input:focus{
+    outline: none;
+}
+

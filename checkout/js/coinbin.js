@@ -23,6 +23,9 @@ $(document).ready(function() {
 		$('#sign').hide();
 		// not working
 
+		$(".wasHidden").hide()
+		$("#fillName").html(productName)
+		$("#fillType").html(productType)
 
 		var alias = $('#alias').val();
 		var pass = $('#pass').val();
@@ -118,6 +121,10 @@ $(document).ready(function() {
 		$("#walletSegwitp2sh")[0].checked = true;
 		$("#openBtn").click();
 	});
+
+	$("#showMore").click(function(){
+		$(".wasHidden").show()
+	})
 
 	$("#walletToSegWitBech32").click(function(){
 		$("#walletToBtn").html('Bech32 <span class="caret"></span>');
