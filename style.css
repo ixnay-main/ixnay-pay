@@ -1,6 +1,6 @@
 body{
-    background-color: black;
-    color: white;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -37,7 +37,7 @@ body{
     color: grey;
     background-color: grey;
     padding:  5px;
-    height: 20em;
+    height: fit-content;
     width: 30em;
     margin-right: 10px;
     border-radius: 4px ;

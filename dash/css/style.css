@@ -7,8 +7,8 @@ html, body {
 	src: url(../../checkout/css/arial-black.ttf) ;
   }
 body {
-	background-color:#000000;
-	color: white !important;
+	background-color:#ffffff;
+	color: rgb(0, 0, 0) !important;
 }
 
 .displaynone {
@@ -25,7 +25,7 @@ body {
 
 #footer {
 	height: 60px;
-	background-color: #000000;
+	background-color: #ffffff;
 	padding-top: 20px;
 
 }
@@ -310,4 +310,12 @@ tr {
 	background-color: rgb(247, 232, 23);
 	border-radius: 5px;
 	float: right;
+}
+
+.noHov{
+	text-decoration: none;
+	color: rgb(0, 0, 0);
+}
+.noHov:hover{
+	color: rgb(0, 0, 0);
 }
