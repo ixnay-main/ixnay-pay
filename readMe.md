@@ -2,7 +2,7 @@ OSS stripe for bitcoin.
 
 Built with GUN and Coinb.in
 
-Home pay in root
+Home page in root
 
 Dash contains dashboard
 Checkout contains prebuilt checkouts
